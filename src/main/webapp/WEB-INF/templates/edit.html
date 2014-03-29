@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Edit user hobbies</title>
+	</head>
+	<body>
+		<h1>Edit user hobbies</h1>
+		<form th:object="${user}" action="index.html" th:action="@{/save}" method="post">
+			<input type="hidden" th:field="*{id}" />
+			<label for="hobbies">User hobbies (multiple select):</label>
+			<br />
+			<select id="hobbies" th:field="*{hobbies}" size="10" multiple="multiple">
+				<option th:each="hobby : ${allHobbies}"
+						th:value="${{hobby}}"
+						th:text="${hobby.description}">
+					Cinema
+				</option>
+			</select>
+			<br />
+			<input type="submit" />
+		</form>
+	</body>
+</html>

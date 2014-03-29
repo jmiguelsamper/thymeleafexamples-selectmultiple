@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>User hobbies</title>
+	</head>
+	<body>
+		<h1>User hobbies</h1>
+		<ul>
+			<li th:each="hobby : ${user.hobbies}"
+				th:text="|${hobby.description} (${{hobby}})|">
+				Cinema
+			</li>
+		</ul>
+		<a href="edit">Edit user hobbies</a>
+	</body>
+</html>
