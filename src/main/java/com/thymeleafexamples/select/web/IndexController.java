@@ -21,11 +21,18 @@ public class IndexController {
 		return "index";
 	}
 
-	@RequestMapping(value = "/edit", method = RequestMethod.GET)
-	public String edit(Model model) {
+	@RequestMapping(value = "/editSelect", method = RequestMethod.GET)
+	public String editSelect(Model model) {
 		model.addAttribute("user", userDao.findOne());
 		model.addAttribute("allHobbies", hobbyDao.findAll());
-		return "edit";
+		return "editSelect";
+	}
+
+	@RequestMapping(value = "/editCheckbox", method = RequestMethod.GET)
+	public String editCheckbox(Model model) {
+		model.addAttribute("user", userDao.findOne());
+		model.addAttribute("allHobbies", hobbyDao.findAll());
+		return "editCheckbox";
 	}
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
